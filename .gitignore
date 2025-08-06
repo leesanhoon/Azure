@@ -1,0 +1,12 @@
+src/EnterpriseAuth.API/obj/Debug/net9.0/EnterpriseAuth.API.AssemblyInfo.cs
+src/EnterpriseAuth.API/obj/Debug/net9.0/EnterpriseAuth.API.AssemblyInfoInputs.cache
+src/EnterpriseAuth.Application/obj/Debug/net9.0/EnterpriseAuth.Application.AssemblyInfo.cs
+src/EnterpriseAuth.Application/obj/Debug/net9.0/EnterpriseAuth.Application.AssemblyInfoInputs.cache
+src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.AssemblyInfo.cs
+src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.AssemblyInfoInputs.cache
+src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/EnterpriseAuth.Infrastructure.AssemblyInfo.cs
+src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/EnterpriseAuth.Infrastructure.AssemblyInfoInputs.cache
+tests/EnterpriseAuth.IntegrationTests/obj/Debug/net9.0/EnterpriseAuth.IntegrationTests.AssemblyInfo.cs
+tests/EnterpriseAuth.IntegrationTests/obj/Debug/net9.0/EnterpriseAuth.IntegrationTests.AssemblyInfoInputs.cache
+tests/EnterpriseAuth.UnitTests/obj/Debug/net9.0/EnterpriseAuth.UnitTests.AssemblyInfo.cs
+tests/EnterpriseAuth.UnitTests/obj/Debug/net9.0/EnterpriseAuth.UnitTests.AssemblyInfoInputs.cache
