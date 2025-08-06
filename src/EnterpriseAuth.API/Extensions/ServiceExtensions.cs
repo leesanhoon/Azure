@@ -53,6 +53,7 @@ namespace EnterpriseAuth.API.Extensions
             }
 
             var key = Encoding.UTF8.GetBytes(jwtSettings.Secret);
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
 
             services.AddAuthentication(options =>
             {
@@ -63,7 +64,7 @@ namespace EnterpriseAuth.API.Extensions
             .AddJwtBearer(options =>
             {
                 options.SaveToken = true;
-                options.RequireHttpsMetadata = false; // Set to true in production
+                options.RequireHttpsMetadata = environment != "Development"; // True in production
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = jwtSettings.ValidateIssuer,
@@ -136,24 +137,33 @@ namespace EnterpriseAuth.API.Extensions
 
         public static IServiceCollection AddCorsPolicy(this IServiceCollection services)
         {
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowSpecificOrigins", builder =>
+                if (environment == "Development")
                 {
-                    builder
-                        .WithOrigins("http://localhost:3000", "https://localhost:3000") // Add your frontend URLs
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials();
-                });
-
-                options.AddPolicy("AllowAll", builder =>
+                    options.AddPolicy("AllowSpecificOrigins", builder =>
+                    {
+                        builder
+                            .WithOrigins("http://localhost:3000", "https://localhost:3000", "http://localhost:4200", "https://localhost:4200")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials();
+                    });
+                }
+                else
                 {
-                    builder
-                        .AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
-                });
+                    // Production: More restrictive CORS
+                    options.AddPolicy("AllowSpecificOrigins", builder =>
+                    {
+                        builder
+                            .WithOrigins("https://yourdomain.com", "https://www.yourdomain.com") // Replace with your production URLs
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials();
+                    });
+                }
             });
 
             return services;
@@ -164,7 +174,27 @@ namespace EnterpriseAuth.API.Extensions
             services.AddHealthChecks()
                 .AddDbContextCheck<ApplicationDbContext>(
                     name: "database",
-                    tags: new[] { "db", "sql", "ready" });
+                    tags: new[] { "db", "sql", "ready" })
+                .AddCheck("self", () => Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult.Healthy(), tags: new[] { "ready" });
+
+            return services;
+        }
+
+        public static IServiceCollection AddSecurityHeaders(this IServiceCollection services)
+        {
+            return services;
+        }
+
+        public static IServiceCollection AddProductionConfiguration(this IServiceCollection services, IConfiguration configuration)
+        {
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+
+            if (environment == "Production")
+            {
+                // Add production-specific configurations here
+                // Note: Application Insights requires Microsoft.ApplicationInsights.AspNetCore package
+                // services.AddApplicationInsightsTelemetry();
+            }
 
             return services;
         }
