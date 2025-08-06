@@ -517,3 +517,4 @@ src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/EnterpriseAuth.Infrastructure
 src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/EnterpriseAuth.Infrastructure.pdb
 src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/ref/EnterpriseAuth.Infrastructure.dll
 src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/refint/EnterpriseAuth.Infrastructure.dll
+src/EnterpriseAuth.API/bin/Debug/net9.0/EnterpriseAuth.API.pdb
