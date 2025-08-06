@@ -9,3 +9,4 @@
 /Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/refint/EnterpriseAuth.Domain.dll
 /Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.pdb
 /Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/ref/EnterpriseAuth.Domain.dll
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.sourcelink.json

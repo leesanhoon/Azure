@@ -17,3 +17,4 @@
 /Users/macbook/Code/Azure/src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/EnterpriseAuth.Infrastructure.pdb
 /Users/macbook/Code/Azure/src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/EnterpriseAuth.Infrastructure.genruntimeconfig.cache
 /Users/macbook/Code/Azure/src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/ref/EnterpriseAuth.Infrastructure.dll
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Infrastructure/obj/Debug/net9.0/EnterpriseAuth.Infrastructure.sourcelink.json

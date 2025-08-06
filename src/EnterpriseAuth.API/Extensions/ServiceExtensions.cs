@@ -5,6 +5,8 @@ using Microsoft.OpenApi.Models;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using System.Text;
+using Azure.Identity;
+using Microsoft.Data.SqlClient;
 using EnterpriseAuth.Application.Common;
 using EnterpriseAuth.Application.Interfaces;
 using EnterpriseAuth.Application.Services;
@@ -19,9 +21,22 @@ namespace EnterpriseAuth.API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
-            // Database
+            // Database with Azure Active Directory authentication
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            {
+                var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+                // Cấu hình cho Azure SQL với Active Directory authentication
+                if (connectionString?.Contains("Authentication=Active Directory Default") == true)
+                {
+                    // Đơn giản hóa cấu hình - Entity Framework sẽ tự xử lý Azure AD authentication
+                    options.UseSqlServer(connectionString);
+                }
+                else
+                {
+                    options.UseSqlServer(connectionString);
+                }
+            });
 
             // Repositories and Unit of Work
             services.AddScoped<IUnitOfWork, UnitOfWork>();

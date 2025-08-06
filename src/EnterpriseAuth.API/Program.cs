@@ -75,8 +75,13 @@ app.MapHealthChecks("/health");
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<EnterpriseAuth.Infrastructure.Data.ApplicationDbContext>();
+    var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
+    
     try
     {
+        var connectionString = configuration.GetConnectionString("DefaultConnection");
+        Log.Information("Using connection string: {ConnectionString}", connectionString?.Substring(0, Math.Min(50, connectionString.Length)) + "...");
+        
         if (app.Environment.IsDevelopment())
         {
             // Development: Ensure database is created
