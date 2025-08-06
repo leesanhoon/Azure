@@ -1,0 +1,11 @@
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.AssemblyInfoInputs.cache
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.AssemblyInfo.cs
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.csproj.CoreCompileInputs.cache
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/bin/Debug/net9.0/EnterpriseAuth.Domain.deps.json
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/bin/Debug/net9.0/EnterpriseAuth.Domain.dll
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/bin/Debug/net9.0/EnterpriseAuth.Domain.pdb
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.dll
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/refint/EnterpriseAuth.Domain.dll
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/EnterpriseAuth.Domain.pdb
+/Users/macbook/Code/Azure/src/EnterpriseAuth.Domain/obj/Debug/net9.0/ref/EnterpriseAuth.Domain.dll

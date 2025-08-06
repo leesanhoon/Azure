@@ -1,0 +1,6 @@
+@EnterpriseAuth.API_HostAddress = http://localhost:5066
+
+GET {{EnterpriseAuth.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
